@@ -4,8 +4,8 @@
 // You can write your code in this editor
 
 verticalVelocidade += gravidade;
-if(!place_free(x, y+1) && keyboard_check(vk_up)){
-	verticalVelocidade =-8;
+if(!place_free(x, y+1) && keyboard_check(ord("W"))){
+	verticalVelocidade =-12;
 	jump = false;
 }
 
@@ -25,9 +25,11 @@ if(!place_free(x, y + verticalVelocidade)){
 y = y + verticalVelocidade;
 
 
-if(keyboard_check(vk_right) && place_free(x+4, y)){
+if(keyboard_check(ord("D")) && place_free(x+4, y)){
 	x += 4;
-}else if(keyboard_check(vk_left) && place_free(x-4, y)){
+	image_xscale = 1;
+}else if(keyboard_check(ord("A")) && place_free(x-4, y)){
 	x -= 4;
+	image_xscale = -1;
 }
 
